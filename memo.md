@@ -14,5 +14,37 @@ composer create-project laravel/laravel laravelapp --prefer-dist
   - 権限付与
   - バージョン確認
   - Laravelインストール
-  ｖ- composer使用しプロジェクト作成
+  - composer使用しプロジェクト作成
 
+- ローカルでのサーバー起動
+```
+php artisan serve
+```
+
+
+# ルート情報の基本
+- getメソッドでアドレスと処理を割り当てる
+- デフォルトは return view('welcome'); なのでwelcome.blade.phpというテンプレートファイルをレンダリングして表示する
+```
+Route::get( アドレス, 関数など);
+
+関数の例
+function(){
+    return 値など;
+}
+
+値の例
+view( テンプレート名 )
+```
+- こんなのもできる
+```
+function(){
+    return ' HTMLのソースコード' l
+}
+```
+
+- パラメータを設定することも可能
+```
+Route::get('/○○/{パラメータ}),function($引数){内容});
+Route::get('test/{id}),function($id){内容});
+```
